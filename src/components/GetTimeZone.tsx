@@ -10,14 +10,24 @@ const GetTimeZone = () => {
   console.log(path, searchParams.get("to"));
   const [imageUrl, setImageUrl] = React.useState<string>("");
 
+  const hours = path.split("/")[1];
+  const minutes = path.split("/")[2];
+  const timezone = path.split("/")[3];
+
   useEffect(() => {
     const res = async () => {
-      const response = await fetch(
-        `http://localhost:8000${path}?to=${searchParams.get("to")}`,
-        {
-          mode: "cors",
-        }
-      );
+      const response = await fetch(`/api/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          hour: hours,
+          minute: minutes,
+          timezone,
+          to: searchParams.get("to"),
+        }),
+      });
       const json = await response.json();
       setImageUrl(json.url);
       console.log(json);

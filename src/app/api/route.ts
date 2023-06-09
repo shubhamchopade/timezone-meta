@@ -29,9 +29,7 @@ export async function POST(req: Request) {
   )}`;
 
   const destinationTimeZone =
-    body.to.toLowerCase() === "pst"
-      ? "America/Los_Angeles"
-      : "America/New_York";
+    to.toLowerCase() === "pst" ? "America/Los_Angeles" : "America/New_York";
   const destinationTimeString = `${to.toLowerCase()}: ${sourceTime.toLocaleString(
     "en-US",
     { timeZone: destinationTimeZone }
