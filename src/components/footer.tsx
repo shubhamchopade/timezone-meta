@@ -2,8 +2,7 @@
 import React from "react";
 
 const Footer = () => {
-  const tld = window && window.location.hostname.split("//").slice(-1)[0];
-  console.log(tld);
+  const tld = "URL";
   return (
     <footer className="lg:fixed px-2 text-xs bottom-3 left-2 my-8">
       <div className="text-sm bottom-10 left-2 mb-4">
