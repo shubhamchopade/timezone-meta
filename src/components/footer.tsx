@@ -1,4 +1,5 @@
 "use client";
+import { timeZones } from "@/utils/timezone";
 import React from "react";
 
 const Footer = () => {
@@ -9,8 +10,16 @@ const Footer = () => {
         <p className="font-bold">How to use?</p>
         <p>URL is important. Append as following </p>
         <p className="text-red-400">
-          TIME <span className="italic">24 hours</span> / MINUTES / TIMEZONE.
+          TIME <span className="italic">24 hours</span> / MINUTES / TIMEZONE /
+          TARGET (optional)
         </p>
+        <p className="font-bold mt-2">Supported timezones for now</p>
+        {timeZones.map((t) => (
+          <span key={t.name} className="ml-2">
+            {t.name}
+          </span>
+        ))}
+
         <p className="font-bold mt-2">Examples</p>
         {/* Example 1 */}
         <p>Share 12:30 PM EST with everyone</p>
@@ -29,6 +38,12 @@ const Footer = () => {
           Shubham Chopade
         </a>
       </span>
+      <a
+        className="ml-2"
+        href="https://github.com/shubhamchopade/timezone-meta"
+      >
+        Source code
+      </a>
     </footer>
   );
 };
