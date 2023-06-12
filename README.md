@@ -7,7 +7,7 @@ This is a simple timezone app that shows the time in different timezones as meta
 Make sure to use correct parameters in the URL. The URL is structured as follows:
 
 ```
-/ [hour] / [minute] / [timezone]
+/ [hour] / [minute] / [timezone] / [target_timezone] optional
 ```
 
 For example, if you want to show the time as 10:00 AM Mumbai, India, you would use the following URL:
@@ -20,4 +20,10 @@ If you want to show the time as 10:00 AM New York, USA, you would use the follow
 
 ```
 /10/00/est
+```
+
+If you want to show the time as 10:00 AM New York, USA, and target time as Mumbai, India you would use the following URL:
+
+```
+/10/00/est/ist
 ```
