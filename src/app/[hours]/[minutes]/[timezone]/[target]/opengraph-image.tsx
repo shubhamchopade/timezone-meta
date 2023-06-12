@@ -17,9 +17,6 @@ export const contentType = "image/png";
 const interBlack = fetch(new URL("./Inter-Black.ttf", import.meta.url)).then(
   (res) => res.arrayBuffer()
 );
-const interNormal = fetch(new URL("./Inter-Regular.ttf", import.meta.url)).then(
-  (res) => res.arrayBuffer()
-);
 
 // Image generation
 export default async function Image({
@@ -127,7 +124,6 @@ export default async function Image({
                     flexDirection: "column",
                     marginTop: -64,
                     marginLeft: 32,
-                    fontWeight: 400,
                     color: "#aaa",
                   }}
                 >
@@ -163,12 +159,6 @@ export default async function Image({
           data: await interBlack,
           style: "normal",
           weight: 900,
-        },
-        {
-          name: "Inter",
-          data: await interNormal,
-          style: "normal",
-          weight: 400,
         },
       ],
     }
